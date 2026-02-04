@@ -32,3 +32,6 @@ Uso de interfaces y manejo de estructura decimal por capas de core, repositorios
 
 Proyecto de pruebas unitarias de back
 <img width="397" height="243" alt="image" src="https://github.com/user-attachments/assets/ce3da4f3-19a3-4314-ae27-a7a87eade265" />
+
+Uso de Angular consulta pedidos
+
