@@ -6,67 +6,42 @@ namespace Console.Migration.Context
     public class SqlServerContext : DbContext
     {
         public SqlServerContext(DbContextOptions options) : base(options) { }
-        public DbSet<StudentDto> Students { get; set; }
-        public DbSet<ProgramDto> Programs { get; set; }
-        public DbSet<ProfessorDto> Professors { get; set; }
-        public DbSet<SubjectDto> Subjects { get; set; }
-        public DbSet<StudentSubjectDto> StudentSubjects { get; set; }
+        public DbSet<Pedido> ordenPedidos { get; set; }
+        public DbSet<Producto> productos { get; set; }
+        public DbSet<Cliente> clientes { get; set; }
+        public DbSet<OrdenPedidoDetalle> ordenPedidoDetalles { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
-            // Student
-            modelBuilder.Entity<StudentDto>()
-                .HasIndex(s => s.Email)
+            modelBuilder.Entity<OrdenPedidoDetalle>()
+                .HasIndex(ss => new { ss.DetalleId})
                 .IsUnique();
 
-            // StudentSubject unique
-            modelBuilder.Entity<StudentSubjectDto>()
-                .HasIndex(ss => new { ss.StudentId, ss.SubjectId })
-                .IsUnique();
-
-            // Relationships
-            modelBuilder.Entity<StudentSubjectDto>()
-                .HasOne(ss => ss.Student)
-                .WithMany(s => s.StudentSubjects)
-                .HasForeignKey(ss => ss.StudentId);
-
-            modelBuilder.Entity<StudentSubjectDto>()
-                .HasOne(ss => ss.Subject)
-                .WithMany(s => s.StudentSubjects)
-                .HasForeignKey(ss => ss.SubjectId);
-
-            modelBuilder.Entity<ProgramDto>(
+            modelBuilder.Entity<Producto>(
                 b =>
                 {
-                    b.HasKey(e => new { e.ProgramId });
+                    b.HasKey(e => new { e.ProductoId });
                 });
 
-            modelBuilder.Entity<StudentDto>(
+            modelBuilder.Entity<Pedido>(
                b =>
                {
-                   b.HasKey(e => new { e.StudentId });
+                   b.HasKey(e => new { e.OrdenPedidoId });
                });
 
 
-            modelBuilder.Entity<SubjectDto>(
+            modelBuilder.Entity<Cliente>(
                b =>
                {
-                   b.HasKey(e => new { e.SubjectId });
+                   b.HasKey(e => new { e.ClienteId });
                });
 
-
-            modelBuilder.Entity<ProfessorDto>(
+            modelBuilder.Entity<OrdenPedidoDetalle>(
                b =>
                {
-                   b.HasKey(e => new { e.ProfessorId });
-               });
-
-            modelBuilder.Entity<StudentSubjectDto>(
-               b =>
-               {
-                   b.HasKey(e => new { e.StudentSubjectId });
+                   b.HasKey(e => new { e.DetalleId });
                });
         }    
     }

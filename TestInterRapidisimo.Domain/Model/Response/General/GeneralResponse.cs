@@ -5,9 +5,9 @@
 
         public GeneralResponse()
         {
-                
+
         }
-        public int Status { get; set; } = (int)Enumerations.enumTypeMessageResponse.Success;
+        public int Status { get; set; } = 0;
         public dynamic? Data { get; set; }
         public string Message { get; set; } = "Proceso Realizado exitosamente";
     };
