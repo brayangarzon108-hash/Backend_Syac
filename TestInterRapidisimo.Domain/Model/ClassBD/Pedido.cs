@@ -18,7 +18,7 @@ namespace TCI.API.Domain.Class.ActivosO.Activos
         public EstadoPedido Estado { get; set; }
 
         public string DireccionEntrega { get; set; } = null!;
-        public int Prioridad { get; set; }
+        public PrioridadPedido Prioridad { get; set; }
 
         public decimal ValorTotal { get; set; }
 

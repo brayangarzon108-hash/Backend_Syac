@@ -10,11 +10,11 @@ namespace Backend.Domain.Model.AutoMapper
         {
             CreateMap<Pedido, PedidoDto>()
                 .ForMember(d => d.ClienteId,
-                    o => o.MapFrom(s => s.Cliente.Nombre));
+                    o => o.MapFrom(s => s.Cliente.Identificacion));
 
             CreateMap<OrdenPedidoDetalle, DetallePedidoDto>()
                 .ForMember(d => d.Producto,
-                    o => o.MapFrom(s => s.Producto.Nombre));
+                    o => o.MapFrom(s => s.Producto.ProductoId));
 
             CreateMap<PedidoCreateDto, Pedido>();
             CreateMap<DetallePedidoCreateDto, OrdenPedidoDetalle>();

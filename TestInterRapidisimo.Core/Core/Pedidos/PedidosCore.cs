@@ -3,6 +3,7 @@ using Backend.Domain.Model.Response.General;
 using TCI.API.DataAccess.DataAccess.CRUD.Procesos.NroSolicitudDato;
 using TCI.API.Domain.Class.ActivosO.Activos;
 using TestInterRapidisimo.Domain.Model.Response;
+using static Backend.Domain.Model.Response.General.Enumeration;
 namespace API.DataAccess.DataAccess
 {
     // Se crea metodo de la tabla Cliente
@@ -94,11 +95,11 @@ namespace API.DataAccess.DataAccess
         /// Método que calcula prioridades
         /// </summary>
         /// <returns></returns>
-        private int CalcularPrioridad(decimal total)
+        private PrioridadPedido CalcularPrioridad(decimal total)
         {
-            if (total <= 500) return (int)Enumeration.PrioridadPedido.Baja;
-            if (total <= 1000) return (int)Enumeration.PrioridadPedido.Media;
-            return (int)Enumeration.PrioridadPedido.Alta;
+            if (total <= 500) return Enumeration.PrioridadPedido.Baja;
+            if (total <= 1000) return Enumeration.PrioridadPedido.Media;
+            return Enumeration.PrioridadPedido.Alta;
         }
     }
 }
