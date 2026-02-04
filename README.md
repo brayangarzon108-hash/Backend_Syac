@@ -1,15 +1,23 @@
 # Backend_Syac
-
+# Backend
 https://github.com/brayangarzon108-hash/Backend_Syac
+# Frontend
 https://github.com/brayangarzon108-hash/Frontend_Syac
+# WPF
 https://github.com/brayangarzon108-hash/wpf-syac
+
+Modelo entidad relacion de base de datos y generación de script
+<img width="977" height="667" alt="image" src="https://github.com/user-attachments/assets/f15b390a-d7a0-4701-9345-e9f7de1f1126" />
+
+Carpeta en back con el script generado
+<img width="989" height="275" alt="image" src="https://github.com/user-attachments/assets/b640d108-2d0a-46ef-b873-3d80a79d3572" />
+
 
 Estructura de diseño back en capas
 
 <img width="477" height="225" alt="image" src="https://github.com/user-attachments/assets/77248bd9-3386-4e32-a258-c2377fac2e88" />
 
-
-Estrctura de diseño front en capas
+Estructura de diseño front en capas
 
 <img width="340" height="616" alt="image" src="https://github.com/user-attachments/assets/31741c9e-1177-4ff4-b590-99d2f4cad64c" />
 
